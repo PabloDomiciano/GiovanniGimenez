@@ -688,7 +688,34 @@ footer {
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
 }
 
-/* Responsive */
+/* Responsive Styles */
+@media (max-width: 1200px) {
+  .container {
+    width: 95%;
+  }
+  
+  .hero-container,
+  .about-container {
+    gap: 40px;
+  }
+  
+  .hero h1 {
+    font-size: 2.8rem;
+  }
+  
+  .section-title h2 {
+    font-size: 2.2rem;
+  }
+  
+  .grid-3 {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+  
+  .grid-4 {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  }
+}
+
 @media (max-width: 992px) {
   .hero-container,
   .about-container {
@@ -699,12 +726,19 @@ footer {
   .about-content {
     order: 2;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   .hero-image,
   .about-image {
     order: 1;
     margin-bottom: 40px;
+    width: 80%;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .hero h1,
@@ -715,6 +749,24 @@ footer {
 
   section {
     padding: 80px 0;
+  }
+  
+  .hero {
+    padding: 150px 0 80px;
+  }
+  
+  .hero-pattern {
+    width: 400px;
+    height: 400px;
+    right: -30px;
+  }
+  
+  .card {
+    padding: 30px;
+  }
+  
+  .consulting-packages {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   }
 }
 
@@ -727,6 +779,14 @@ footer {
     display: block;
   }
 
+  .header-container {
+    padding: 15px 0;
+  }
+  
+  .logo-img {
+    height: 60px;
+  }
+
   .hero h1,
   .section-title h2,
   .cta h2 {
@@ -737,26 +797,201 @@ footer {
   .section-title p {
     font-size: 1rem;
   }
-
+  
+  .hero {
+    padding: 120px 0 60px;
+  }
+  
+  .hero-container {
+    gap: 30px;
+  }
+  
+  .hero-pattern {
+    width: 300px;
+    height: 300px;
+    top: -30px;
+    right: -20px;
+  }
+  
+  .btn {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+  
   .cta-buttons {
     flex-direction: column;
     gap: 15px;
+    align-items: center;
+  }
+  
+  .cta-buttons .btn {
+    width: 100%;
+    max-width: 300px;
   }
 
   .package-card.popular {
     transform: none;
   }
-
+  
   .footer-container {
     grid-template-columns: 1fr;
     gap: 30px;
+    text-align: center;
   }
-
+  
+  .social-links {
+    justify-content: center;
+  }
+  
+  .footer-link:hover {
+    transform: none;
+  }
+  
   .whatsapp-btn {
     width: 50px;
     height: 50px;
     font-size: 1.5rem;
     bottom: 20px;
     right: 20px;
+  }
+  
+  .testimonial-author {
+    justify-content: center;
+  }
+  
+  .about-badge {
+    position: static;
+    margin-top: 20px;
+    display: inline-block;
+  }
+}
+
+@media (max-width: 576px) {
+  .container {
+    width: 90%;
+  }
+  
+  section {
+    padding: 60px 0;
+  }
+  
+  .hero {
+    padding: 100px 0 40px;
+  }
+  
+  .hero h1 {
+    font-size: 1.6rem;
+    margin-bottom: 15px;
+  }
+  
+  .hero p {
+    font-size: 0.95rem;
+    margin-bottom: 25px;
+  }
+  
+  .section-title h2 {
+    font-size: 1.5rem;
+  }
+  
+  .section-title p {
+    font-size: 0.9rem;
+  }
+  
+  .section-title {
+    margin-bottom: 40px;
+  }
+  
+  .grid-3,
+  .grid-4 {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .card {
+    padding: 25px;
+  }
+  
+  .card-icon {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 15px;
+  }
+  
+  .card h3 {
+    font-size: 1.3rem;
+  }
+  
+  .mobile-menu .nav-link {
+    font-size: 1rem;
+    padding: 12px 0;
+  }
+  
+  .mobile-menu .btn {
+    margin-top: 15px;
+    padding: 12px;
+  }
+  
+  .consulting-packages {
+    grid-template-columns: 1fr;
+  }
+  
+  .package-header,
+  .package-features,
+  .package-footer {
+    padding: 20px;
+  }
+  
+  .package-name {
+    font-size: 1.3rem;
+  }
+  
+  .package-price {
+    font-size: 1.8rem;
+  }
+  
+  .footer-logo-img {
+    height: 80px;
+  }
+  
+  .faq-question {
+    padding: 15px;
+    font-size: 0.95rem;
+  }
+  
+  .testimonial-avatar {
+    width: 45px;
+    height: 45px;
+  }
+}
+
+@media (max-width: 400px) {
+  .hero h1 {
+    font-size: 1.4rem;
+  }
+  
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .hero-image,
+  .about-image {
+    width: 95%;
+  }
+  
+  .logo {
+    font-size: 1.2rem;
+  }
+  
+  .logo-img {
+    height: 50px;
+  }
+  
+  .whatsapp-btn {
+    width: 45px;
+    height: 45px;
+    font-size: 1.3rem;
+    bottom: 15px;
+    right: 15px;
   }
 }
