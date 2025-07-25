@@ -35,7 +35,15 @@ const mobileMenuBtn = document.querySelector(".mobile-menu-btn");
 const mobileMenu = document.querySelector(".mobile-menu");
 
 mobileMenuBtn.addEventListener("click", () => {
+  mobileMenuBtn.classList.toggle("active");
   mobileMenu.classList.toggle("active");
+
+  // Impede a rolagem do corpo quando o menu está aberto
+  if (mobileMenu.classList.contains("active")) {
+    document.body.style.overflow = "hidden";
+  } else {
+    document.body.style.overflow = "auto";
+  }
 });
 
 // Close mobile menu when clicking a link
@@ -43,6 +51,17 @@ document
   .querySelectorAll(".mobile-menu .nav-link, .mobile-menu .btn")
   .forEach((link) => {
     link.addEventListener("click", () => {
+      mobileMenuBtn.classList.remove("active");
       mobileMenu.classList.remove("active");
+      document.body.style.overflow = "auto";
     });
   });
+
+// Close menu when clicking outside
+document.addEventListener("click", (e) => {
+  if (!mobileMenu.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+    mobileMenuBtn.classList.remove("active");
+    mobileMenu.classList.remove("active");
+    document.body.style.overflow = "auto";
+  }
+});
